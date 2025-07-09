@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./scriptViews.db"
+}
+
+model Views {
+  id Int @id @default(autoincrement())
+  views Int 
+}
