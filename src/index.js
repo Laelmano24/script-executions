@@ -1,4 +1,5 @@
 import express from "express"
+import cors from "cors"
 import { fileURLToPath } from "url"
 import { join, dirname } from "path"
 import { readFileSync } from "fs"
@@ -8,6 +9,7 @@ const app = express()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 app.use(express.static(join(__dirname, "front-end")))
+app.use(cors())
 
 app.get("/script/loader", async (req, res) => {
 
